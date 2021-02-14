@@ -9,7 +9,6 @@ local Line = Instance.new("TextLabel")
 local LocalFrame = Instance.new("ImageLabel")
 local HealthBackground = Instance.new("Frame")
 local HealthFrame = Instance.new("Frame")
-local HealthLabel = Instance.new("TextLabel")
 local LocalButton = Instance.new("TextButton")
 local PlayerButton = Instance.new("TextButton")
 local WeaponButton = Instance.new("TextButton")
@@ -22,7 +21,7 @@ local idLabel = Instance.new("TextLabel")
 local PlayerFrame = Instance.new("ImageLabel")
 local UsernameBox = Instance.new("TextBox")
 local SubmitButton = Instance.new("TextButton")
-local HealthLabel_2 = Instance.new("TextLabel")
+local HealthLabel = Instance.new("TextLabel")
 local HealthNumber = Instance.new("TextLabel")
 local WeaponFrame = Instance.new("ImageLabel")
 local M4A1Var1Button = Instance.new("TextButton")
@@ -34,6 +33,14 @@ local AKMButton = Instance.new("TextButton")
 local M110Button = Instance.new("TextButton")
 local M9A3Button = Instance.new("TextButton")
 local M1AButton = Instance.new("TextButton")
+local MoreButton = Instance.new("TextButton")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local M9A3TacButton = Instance.new("TextButton")
+local MP5Button = Instance.new("TextButton")
+local SPASButton = Instance.new("TextButton")
+local ShieldButton = Instance.new("TextButton")
+local SaluteButton = Instance.new("TextButton")
+local AtEaseButton = Instance.new("TextButton")
 local OtherFrame = Instance.new("ImageLabel")
 local ExitButton = Instance.new("TextButton")
 local TextButton_Roundify_5px = Instance.new("ImageLabel")
@@ -51,7 +58,7 @@ MainLabel.Parent = ThePurgeCIA
 MainLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 MainLabel.BackgroundTransparency = 1.000
 MainLabel.BorderSizePixel = 0
-MainLabel.Position = UDim2.new(0.00521159172, 0, 0.0129629672, 0)
+MainLabel.Position = UDim2.new(0.00625325833, 0, 0.0111111142, 0)
 MainLabel.Size = UDim2.new(0, 700, 0, 43)
 MainLabel.ZIndex = 3
 MainLabel.Font = Enum.Font.SourceSans
@@ -96,18 +103,6 @@ HealthFrame.BackgroundColor3 = Color3.fromRGB(81, 255, 7)
 HealthFrame.BorderSizePixel = 0
 HealthFrame.Position = UDim2.new(-0.000321934582, 0, -0.0164762232, 0)
 HealthFrame.Size = UDim2.new(0, 295, 0, 24)
-
-HealthLabel.Name = "HealthLabel"
-HealthLabel.Parent = HealthFrame
-HealthLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-HealthLabel.BackgroundTransparency = 1.000
-HealthLabel.BorderSizePixel = 0
-HealthLabel.Position = UDim2.new(0.000321934582, 0, 0.0144166946, 0)
-HealthLabel.Size = UDim2.new(0, 295, 0, 24)
-HealthLabel.Font = Enum.Font.SourceSans
-HealthLabel.Text = "HEALTH"
-HealthLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-HealthLabel.TextSize = 32.000
 
 LocalButton.Name = "LocalButton"
 LocalButton.Parent = ThePurgeCIA
@@ -263,17 +258,17 @@ SubmitButton.Text = "Submit"
 SubmitButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 SubmitButton.TextSize = 48.000
 
-HealthLabel_2.Name = "HealthLabel"
-HealthLabel_2.Parent = PlayerFrame
-HealthLabel_2.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
-HealthLabel_2.BorderSizePixel = 0
-HealthLabel_2.Position = UDim2.new(0.30286786, 0, 0.138194382, 0)
-HealthLabel_2.Size = UDim2.new(0, 133, 0, 89)
-HealthLabel_2.Font = Enum.Font.SourceSans
-HealthLabel_2.Text = "Health"
-HealthLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-HealthLabel_2.TextSize = 28.000
-HealthLabel_2.TextYAlignment = Enum.TextYAlignment.Top
+HealthLabel.Name = "HealthLabel"
+HealthLabel.Parent = PlayerFrame
+HealthLabel.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+HealthLabel.BorderSizePixel = 0
+HealthLabel.Position = UDim2.new(0.30286786, 0, 0.138194382, 0)
+HealthLabel.Size = UDim2.new(0, 133, 0, 89)
+HealthLabel.Font = Enum.Font.SourceSans
+HealthLabel.Text = "Health"
+HealthLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+HealthLabel.TextSize = 28.000
+HealthLabel.TextYAlignment = Enum.TextYAlignment.Top
 
 HealthNumber.Name = "HealthNumber"
 HealthNumber.Parent = PlayerFrame
@@ -293,7 +288,6 @@ WeaponFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 WeaponFrame.BackgroundTransparency = 1.000
 WeaponFrame.Position = UDim2.new(0.00649959221, 0, 0.0120370369, 0)
 WeaponFrame.Size = UDim2.new(0, 700, 0, 350)
-WeaponFrame.Visible = false
 WeaponFrame.Image = "rbxassetid://3570695787"
 WeaponFrame.ImageColor3 = Color3.fromRGB(34, 34, 34)
 WeaponFrame.ScaleType = Enum.ScaleType.Slice
@@ -399,6 +393,98 @@ M1AButton.Text = "M1A EBR"
 M1AButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 M1AButton.TextSize = 45.000
 
+MoreButton.Name = "MoreButton"
+MoreButton.Parent = WeaponFrame
+MoreButton.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+MoreButton.BorderSizePixel = 0
+MoreButton.Position = UDim2.new(0.30323422, 0, 0.659999967, 0)
+MoreButton.Size = UDim2.new(0, 474, 0, 50)
+MoreButton.Font = Enum.Font.SourceSans
+MoreButton.Text = "MORE"
+MoreButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+MoreButton.TextSize = 45.000
+
+ScrollingFrame.Parent = WeaponFrame
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+ScrollingFrame.BorderSizePixel = 0
+ScrollingFrame.Position = UDim2.new(0.995714307, 0, 0.660000026, 0)
+ScrollingFrame.Size = UDim2.new(0, 181, 0, 167)
+ScrollingFrame.Visible = false
+ScrollingFrame.ScrollBarThickness = 13
+
+M9A3TacButton.Name = "M9A3TacButton"
+M9A3TacButton.Parent = ScrollingFrame
+M9A3TacButton.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+M9A3TacButton.BorderSizePixel = 0
+M9A3TacButton.Position = UDim2.new(-0.00542471185, 0, 0, 5)
+M9A3TacButton.Size = UDim2.new(0, 160, 0, 55)
+M9A3TacButton.Font = Enum.Font.SourceSans
+M9A3TacButton.Text = "M9A3 Tactical"
+M9A3TacButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+M9A3TacButton.TextSize = 30.000
+M9A3TacButton.TextWrapped = true
+
+MP5Button.Name = "MP5Button"
+MP5Button.Parent = ScrollingFrame
+MP5Button.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+MP5Button.BorderSizePixel = 0
+MP5Button.Position = UDim2.new(-0.00542471185, 0, 0.0885714293, 5)
+MP5Button.Size = UDim2.new(0, 160, 0, 55)
+MP5Button.Font = Enum.Font.SourceSans
+MP5Button.Text = "MP5SD"
+MP5Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+MP5Button.TextSize = 30.000
+MP5Button.TextWrapped = true
+
+SPASButton.Name = "SPASButton"
+SPASButton.Parent = ScrollingFrame
+SPASButton.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+SPASButton.BorderSizePixel = 0
+SPASButton.Position = UDim2.new(-0.00542471185, 0, 0.177142859, 5)
+SPASButton.Size = UDim2.new(0, 160, 0, 55)
+SPASButton.Font = Enum.Font.SourceSans
+SPASButton.Text = "SPAS-12"
+SPASButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+SPASButton.TextSize = 30.000
+SPASButton.TextWrapped = true
+
+ShieldButton.Name = "ShieldButton"
+ShieldButton.Parent = ScrollingFrame
+ShieldButton.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+ShieldButton.BorderSizePixel = 0
+ShieldButton.Position = UDim2.new(-0.00542471185, 0, 0.265714288, 5)
+ShieldButton.Size = UDim2.new(0, 160, 0, 55)
+ShieldButton.Font = Enum.Font.SourceSans
+ShieldButton.Text = "Shield"
+ShieldButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+ShieldButton.TextSize = 30.000
+ShieldButton.TextWrapped = true
+
+SaluteButton.Name = "SaluteButton"
+SaluteButton.Parent = ScrollingFrame
+SaluteButton.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+SaluteButton.BorderSizePixel = 0
+SaluteButton.Position = UDim2.new(0.000100150239, 0, 0.357142866, 5)
+SaluteButton.Size = UDim2.new(0, 160, 0, 55)
+SaluteButton.Font = Enum.Font.SourceSans
+SaluteButton.Text = "Salute"
+SaluteButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+SaluteButton.TextSize = 30.000
+SaluteButton.TextWrapped = true
+
+AtEaseButton.Name = "AtEaseButton"
+AtEaseButton.Parent = ScrollingFrame
+AtEaseButton.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+AtEaseButton.BorderSizePixel = 0
+AtEaseButton.Position = UDim2.new(0.000100150239, 0, 0.448571444, 5)
+AtEaseButton.Size = UDim2.new(0, 160, 0, 55)
+AtEaseButton.Font = Enum.Font.SourceSans
+AtEaseButton.Text = "At ease"
+AtEaseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+AtEaseButton.TextSize = 30.000
+AtEaseButton.TextWrapped = true
+
 OtherFrame.Name = "OtherFrame"
 OtherFrame.Parent = ThePurgeCIA
 OtherFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -471,7 +557,7 @@ StatusLabel.TextXAlignment = Enum.TextXAlignment.Left
 TextLabel.Parent = ThePurgeCIA
 TextLabel.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
 TextLabel.BorderSizePixel = 0
-TextLabel.Position = UDim2.new(0.00625000009, 0, 0.257407397, 0)
+TextLabel.Position = UDim2.new(0.00625000009, 0, 0.256000012, 0)
 TextLabel.Size = UDim2.new(0, 200, 0, 50)
 TextLabel.ZIndex = 3
 TextLabel.Font = Enum.Font.SourceSans
@@ -481,15 +567,9 @@ TextLabel.TextSize = 45.000
 
 -- Scripts:
 
-local function TINUX_fake_script() -- ThePurgeCIA.GuiHandler 
+local function KTNPLN_fake_script() -- ThePurgeCIA.GuiHandler 
 	local script = Instance.new('LocalScript', ThePurgeCIA)
 
-	function Set (list)
-		local set = {}
-		for _, l in ipairs(list) do set[l] = true end
-		return set
-	end
-	
 	local name = game.Players.LocalPlayer.Name
 	local id = game.Players.LocalPlayer.userId
 	local label = script.Parent.TextLabel
@@ -502,7 +582,15 @@ local function TINUX_fake_script() -- ThePurgeCIA.GuiHandler
 	end
 	
 	function exit()
-		script.Parent.Parent["The Purge - CIA"].Enabled = false
+		script.Parent.Parent["The Purge - CIA"]:Remove()
+	end
+	
+	function moreWeapon()
+		if script.Parent.WeaponFrame.ScrollingFrame.Visible == true then
+			script.Parent.WeaponFrame.ScrollingFrame.Visible = false
+		else
+			script.Parent.WeaponFrame.ScrollingFrame.Visible = true
+		end
 	end
 	
 	function localWindow()
@@ -538,13 +626,14 @@ local function TINUX_fake_script() -- ThePurgeCIA.GuiHandler
 	end
 	
 	script.Parent.ExitButton.MouseButton1Click:Connect(exit)
+	script.Parent.WeaponFrame.MoreButton.MouseButton1Click:Connect(moreWeapon)
 	script.Parent.LocalButton.MouseButton1Click:Connect(localWindow)
 	script.Parent.PlayerButton.MouseButton1Click:Connect(playerWindow)
 	script.Parent.WeaponButton.MouseButton1Click:Connect(weaponWindow)
 	script.Parent.OtherButton.MouseButton1Click:Connect(otherWindow)
 end
-coroutine.wrap(TINUX_fake_script)()
-local function FASPT_fake_script() -- ThePurgeCIA.WeaponsHandler 
+coroutine.wrap(KTNPLN_fake_script)()
+local function GYNSZUH_fake_script() -- ThePurgeCIA.WeaponsHandler 
 	local script = Instance.new('LocalScript', ThePurgeCIA)
 
 	local player = game.Players.LocalPlayer
@@ -552,18 +641,6 @@ local function FASPT_fake_script() -- ThePurgeCIA.WeaponsHandler
 	
 	function M4A1Var1()
 		local tool = game.Teams["Security Division"]:WaitForChild("M4A1 EOTech")	
-		local ctool = tool:Clone()
-		ctool.Parent = backpack
-	end
-	
-	function M45A1()
-		local tool = game.Teams["Security Division"]:WaitForChild("M45A1")	
-		local ctool = tool:Clone()
-		ctool.Parent = backpack
-	end
-	
-	function G17()
-		local tool = game.Teams["Hostile Hazmat"]:WaitForChild("Glock 17")	
 		local ctool = tool:Clone()
 		ctool.Parent = backpack
 	end
@@ -576,6 +653,18 @@ local function FASPT_fake_script() -- ThePurgeCIA.WeaponsHandler
 	
 	function SOPMOD()
 		local tool = game.Teams["Centurion Protection Unit"]:WaitForChild("M4A1 SOPMOD 2")	
+		local ctool = tool:Clone()
+		ctool.Parent = backpack
+	end
+	
+	function M45A1()
+		local tool = game.Teams["Security Division"]:WaitForChild("M45A1")	
+		local ctool = tool:Clone()
+		ctool.Parent = backpack
+	end
+	
+	function G17()
+		local tool = game.Teams["Hostile Hazmat"]:WaitForChild("Glock 17")	
 		local ctool = tool:Clone()
 		ctool.Parent = backpack
 	end
@@ -593,13 +682,49 @@ local function FASPT_fake_script() -- ThePurgeCIA.WeaponsHandler
 	end
 	
 	function M9A3()
-		local tool = game.Teams["Centurion Protection Unit"]:WaitForChild("M9A3 Tactical")	
+		local tool = game.Teams["Special Forces"]:WaitForChild("M9A3")	
 		local ctool = tool:Clone()
 		ctool.Parent = backpack
 	end
 	
 	function M1A()
 		local tool = game.Teams["Special Forces"]:WaitForChild("M1A EBR")	
+		local ctool = tool:Clone()
+		ctool.Parent = backpack
+	end
+	
+	function M9A3Tac()
+		local tool = game.Teams["Centurion Protection Unit"]:WaitForChild("M9A3 Tactical")	
+		local ctool = tool:Clone()
+		ctool.Parent = backpack
+	end
+	
+	function MP5()
+		local tool = game.Teams["Internal Affairs"]:WaitForChild("MP5SD")	
+		local ctool = tool:Clone()
+		ctool.Parent = backpack
+	end
+	
+	function SPAS()
+		local tool = game.Teams["Satellite Systems Center"]:WaitForChild("SPAS-12")	
+		local ctool = tool:Clone()
+		ctool.Parent = backpack
+	end
+	
+	function Shield()
+		local tool = game.Teams["Centurion Protection Unit"]:WaitForChild("Shield")	
+		local ctool = tool:Clone()
+		ctool.Parent = backpack
+	end
+	
+	function Salute()
+		local tool = game.Teams["Central Intelligence Agency"]:WaitForChild("Salute")	
+		local ctool = tool:Clone()
+		ctool.Parent = backpack
+	end
+	
+	function AtEase()
+		local tool = game.Teams["Central Intelligence Agency"]:WaitForChild("AtEase")	
 		local ctool = tool:Clone()
 		ctool.Parent = backpack
 	end
@@ -613,9 +738,15 @@ local function FASPT_fake_script() -- ThePurgeCIA.WeaponsHandler
 	script.Parent.WeaponFrame.M110Button.MouseButton1Click:Connect(M110)
 	script.Parent.WeaponFrame.M9A3Button.MouseButton1Click:Connect(M9A3)
 	script.Parent.WeaponFrame.M1AButton.MouseButton1Click:Connect(M1A)
+	script.Parent.WeaponFrame.ScrollingFrame.M9A3TacButton.MouseButton1Click:Connect(M9A3Tac)
+	script.Parent.WeaponFrame.ScrollingFrame.MP5Button.MouseButton1Click:Connect(MP5)
+	script.Parent.WeaponFrame.ScrollingFrame.SPASButton.MouseButton1Click:Connect(SPAS)
+	script.Parent.WeaponFrame.ScrollingFrame.ShieldButton.MouseButton1Click:Connect(Shield)
+	script.Parent.WeaponFrame.ScrollingFrame.SaluteButton.MouseButton1Click:Connect(Salute)
+	script.Parent.WeaponFrame.ScrollingFrame.AtEaseButton.MouseButton1Click:Connect(AtEase)
 end
-coroutine.wrap(FASPT_fake_script)()
-local function ZKFXU_fake_script() -- ThePurgeCIA.PlayerHandler 
+coroutine.wrap(GYNSZUH_fake_script)()
+local function RLTL_fake_script() -- ThePurgeCIA.PlayerHandler 
 	local script = Instance.new('LocalScript', ThePurgeCIA)
 
 	local textbox = script.Parent.PlayerFrame.UsernameBox
@@ -638,8 +769,8 @@ local function ZKFXU_fake_script() -- ThePurgeCIA.PlayerHandler
 	
 	script.Parent.PlayerFrame.SubmitButton.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(ZKFXU_fake_script)()
-local function HJQH_fake_script() -- ThePurgeCIA.LocalHandler 
+coroutine.wrap(RLTL_fake_script)()
+local function MWBVYQA_fake_script() -- ThePurgeCIA.LocalHandler 
 	local script = Instance.new('LocalScript', ThePurgeCIA)
 
 	local player = game.Players.LocalPlayer
@@ -647,9 +778,7 @@ local function HJQH_fake_script() -- ThePurgeCIA.LocalHandler
 	local humanoid = character:WaitForChild("Humanoid")
 	
 	humanoid.HealthChanged:Connect(function(Damage)
-		script.Parent.LocalFrame.HealthBackground.HealthFrame.HealthLabel.Text = humanoid.Health
 		script.Parent.LocalFrame.HealthBackground.HealthFrame.Size = UDim2.new(Damage / humanoid.MaxHealth, 0,1,0)
-		script.Parent.LocalFrame.HealthBackground.HealthFrame.HealthLabel.Text = humanoid.Health
 	end)
 end
-coroutine.wrap(HJQH_fake_script)()
+coroutine.wrap(MWBVYQA_fake_script)()
