@@ -567,7 +567,7 @@ TextLabel.TextSize = 45.000
 
 -- Scripts:
 
-local function KTNPLN_fake_script() -- ThePurgeCIA.GuiHandler 
+local function ZBRGAVQ_fake_script() -- ThePurgeCIA.GuiHandler 
 	local script = Instance.new('LocalScript', ThePurgeCIA)
 
 	local name = game.Players.LocalPlayer.Name
@@ -577,8 +577,12 @@ local function KTNPLN_fake_script() -- ThePurgeCIA.GuiHandler
 	script.Parent.UserLabel.Text = name
 	script.Parent.idLabel.Text = id
 	
-	if game.Players.LocalPlayer.userId == 80832482  then
-		script.Parent.StatusLabel.Text = "Premium"
+	local ids = {"1705357391", "243445599", "80832482"}
+	
+	for i, v in pairs(ids) do
+		if v == tostring(game.Players.LocalPlayer.UserId) then
+			script.Parent.StatusLabel.Text = "Premium"
+		end
 	end
 	
 	function exit()
@@ -632,8 +636,8 @@ local function KTNPLN_fake_script() -- ThePurgeCIA.GuiHandler
 	script.Parent.WeaponButton.MouseButton1Click:Connect(weaponWindow)
 	script.Parent.OtherButton.MouseButton1Click:Connect(otherWindow)
 end
-coroutine.wrap(KTNPLN_fake_script)()
-local function GYNSZUH_fake_script() -- ThePurgeCIA.WeaponsHandler 
+coroutine.wrap(ZBRGAVQ_fake_script)()
+local function NFJQX_fake_script() -- ThePurgeCIA.WeaponsHandler 
 	local script = Instance.new('LocalScript', ThePurgeCIA)
 
 	local player = game.Players.LocalPlayer
@@ -745,8 +749,8 @@ local function GYNSZUH_fake_script() -- ThePurgeCIA.WeaponsHandler
 	script.Parent.WeaponFrame.ScrollingFrame.SaluteButton.MouseButton1Click:Connect(Salute)
 	script.Parent.WeaponFrame.ScrollingFrame.AtEaseButton.MouseButton1Click:Connect(AtEase)
 end
-coroutine.wrap(GYNSZUH_fake_script)()
-local function RLTL_fake_script() -- ThePurgeCIA.PlayerHandler 
+coroutine.wrap(NFJQX_fake_script)()
+local function WACZXKJ_fake_script() -- ThePurgeCIA.PlayerHandler 
 	local script = Instance.new('LocalScript', ThePurgeCIA)
 
 	local textbox = script.Parent.PlayerFrame.UsernameBox
@@ -769,8 +773,8 @@ local function RLTL_fake_script() -- ThePurgeCIA.PlayerHandler
 	
 	script.Parent.PlayerFrame.SubmitButton.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(RLTL_fake_script)()
-local function MWBVYQA_fake_script() -- ThePurgeCIA.LocalHandler 
+coroutine.wrap(WACZXKJ_fake_script)()
+local function QVZPN_fake_script() -- ThePurgeCIA.LocalHandler 
 	local script = Instance.new('LocalScript', ThePurgeCIA)
 
 	local player = game.Players.LocalPlayer
@@ -781,4 +785,4 @@ local function MWBVYQA_fake_script() -- ThePurgeCIA.LocalHandler
 		script.Parent.LocalFrame.HealthBackground.HealthFrame.Size = UDim2.new(Damage / humanoid.MaxHealth, 0,1,0)
 	end)
 end
-coroutine.wrap(MWBVYQA_fake_script)()
+coroutine.wrap(QVZPN_fake_script)()
